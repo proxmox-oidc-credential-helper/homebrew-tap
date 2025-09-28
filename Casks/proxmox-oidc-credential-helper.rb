@@ -15,13 +15,13 @@ cask "proxmox-oidc-credential-helper" do
     on_intel do
       url "https://github.com/proxmox-oidc-credential-helper/proxmox-oidc-credential-helper/releases/download/v#{version}/proxmox-oidc-credential-helper_Darwin_amd64.tar.gz",
         verified: "github.com/proxmox-oidc-credential-helper/proxmox-oidc-credential-helper/",
-        using: :homebrew_curl
+        #using: :homebrew_curl
       sha256 "5a767f3c8aa0775dd03a9b1604ca0b65d46523dca03280a349946f185b3d2f61"
     end
     on_arm do
       url "https://github.com/proxmox-oidc-credential-helper/proxmox-oidc-credential-helper/releases/download/v#{version}/proxmox-oidc-credential-helper_Darwin_arm64.tar.gz",
         verified: "github.com/proxmox-oidc-credential-helper/proxmox-oidc-credential-helper/",
-        using: :homebrew_curl
+        #using: :homebrew_curl
       sha256 "3b45105d3c49997459fdd26e9cf3195a98481cfa9c9a028280670a4fd9dd42f2"
     end
   end
