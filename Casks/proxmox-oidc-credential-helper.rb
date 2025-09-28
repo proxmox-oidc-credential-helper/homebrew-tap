@@ -3,7 +3,7 @@ cask "proxmox-oidc-credential-helper" do
   name "proxmox-oidc-credential-helper"
   desc "proxmox-oidc-credential-helper utility allows to obtain credentials from Proxmox's UI using OIDC and exports them to the shell as env variables."
   homepage "https://github.com/proxmox-oidc-credential-helper/proxmox-oidc-credential-helper"
-  version "0.4.1-rc6"
+  version "0.4.2"
 
   livecheck do
     skip "Auto-generated on release."
@@ -15,12 +15,12 @@ cask "proxmox-oidc-credential-helper" do
     on_intel do
       url "https://github.com/proxmox-oidc-credential-helper/proxmox-oidc-credential-helper/releases/download/v#{version}/proxmox-oidc-credential-helper_Darwin_amd64.tar.gz",
         verified: "github.com/proxmox-oidc-credential-helper/proxmox-oidc-credential-helper/"
-      sha256 "053e4de96e583eb6012f27bdf6dbfaabc26742c3e2d002847511eb3987b7e57d"
+      sha256 "4e18d54bc220de1182c6ff5e86120a7b68274851b899c932e56a8bf8dae83d96"
     end
     on_arm do
       url "https://github.com/proxmox-oidc-credential-helper/proxmox-oidc-credential-helper/releases/download/v#{version}/proxmox-oidc-credential-helper_Darwin_arm64.tar.gz",
         verified: "github.com/proxmox-oidc-credential-helper/proxmox-oidc-credential-helper/"
-      sha256 "1614e170fb84f024eeedeb47f388344afb3e11d25eff918ab1b15316bca54bbc"
+      sha256 "632372f005e5d2ff7f818eeebbc98eabb07c59be65e284417142271f38a44771"
     end
   end
 
@@ -28,12 +28,12 @@ cask "proxmox-oidc-credential-helper" do
     on_intel do
       url "https://github.com/proxmox-oidc-credential-helper/proxmox-oidc-credential-helper/releases/download/v#{version}/proxmox-oidc-credential-helper_Linux_amd64.tar.gz",
         verified: "github.com/proxmox-oidc-credential-helper/proxmox-oidc-credential-helper/"
-      sha256 "6adcdd4e977e5c32bfbdd0cc3c7f92c61de2fa02de07c925bd1786d8b42c6f6e"
+      sha256 "d3f285252c2ba07d67c714a4d608f75a37a3b4c4b955bb9187e997d49795af51"
     end
     on_arm do
       url "https://github.com/proxmox-oidc-credential-helper/proxmox-oidc-credential-helper/releases/download/v#{version}/proxmox-oidc-credential-helper_Linux_arm64.tar.gz",
         verified: "github.com/proxmox-oidc-credential-helper/proxmox-oidc-credential-helper/"
-      sha256 "8a1a732a625361562d3bcb36af1baebebc00729b4429ad64251430ec553a3db1"
+      sha256 "2c9105c184992f97dbfbddfb4ba9e8174b471a78ef37fab44dca854dadb87a12"
     end
   end
 
