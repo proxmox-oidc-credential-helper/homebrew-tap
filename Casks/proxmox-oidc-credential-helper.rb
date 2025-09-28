@@ -3,7 +3,7 @@ cask "proxmox-oidc-credential-helper" do
   name "proxmox-oidc-credential-helper"
   desc "proxmox-oidc-credential-helper utility allows to obtain credentials from Proxmox's UI using OIDC and exports them to the shell as env variables."
   homepage "https://github.com/proxmox-oidc-credential-helper/proxmox-oidc-credential-helper"
-  version "0.4.1-rc5"
+  version "0.4.1-rc6"
 
   livecheck do
     skip "Auto-generated on release."
@@ -15,29 +15,31 @@ cask "proxmox-oidc-credential-helper" do
     on_intel do
       url "https://github.com/proxmox-oidc-credential-helper/proxmox-oidc-credential-helper/releases/download/v#{version}/proxmox-oidc-credential-helper_Darwin_amd64.tar.gz",
         verified: "github.com/proxmox-oidc-credential-helper/proxmox-oidc-credential-helper/"
-        #using: :homebrew_curl
-      sha256 "5a767f3c8aa0775dd03a9b1604ca0b65d46523dca03280a349946f185b3d2f61"
+      sha256 "053e4de96e583eb6012f27bdf6dbfaabc26742c3e2d002847511eb3987b7e57d"
     end
     on_arm do
       url "https://github.com/proxmox-oidc-credential-helper/proxmox-oidc-credential-helper/releases/download/v#{version}/proxmox-oidc-credential-helper_Darwin_arm64.tar.gz",
         verified: "github.com/proxmox-oidc-credential-helper/proxmox-oidc-credential-helper/"
-        #using: :homebrew_curl
-      sha256 "3b45105d3c49997459fdd26e9cf3195a98481cfa9c9a028280670a4fd9dd42f2"
+      sha256 "1614e170fb84f024eeedeb47f388344afb3e11d25eff918ab1b15316bca54bbc"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/proxmox-oidc-credential-helper/proxmox-oidc-credential-helper/releases/download/v#{version}/proxmox-oidc-credential-helper_Linux_amd64.tar.gz",
-        verified: "github.com/proxmox-oidc-credential-helper/proxmox-oidc-credential-helper/",
-        using: :homebrew_curl
-      sha256 "a6769fec20784a96267ee90ccbb0ff0e113e2b09eb54e7ef1310ee4bca63eb9e"
+        verified: "github.com/proxmox-oidc-credential-helper/proxmox-oidc-credential-helper/"
+      sha256 "6adcdd4e977e5c32bfbdd0cc3c7f92c61de2fa02de07c925bd1786d8b42c6f6e"
     end
     on_arm do
       url "https://github.com/proxmox-oidc-credential-helper/proxmox-oidc-credential-helper/releases/download/v#{version}/proxmox-oidc-credential-helper_Linux_arm64.tar.gz",
-        verified: "github.com/proxmox-oidc-credential-helper/proxmox-oidc-credential-helper/",
-        using: :homebrew_curl
-      sha256 "01e0a36971a264874295fd2e6740615a7132f489befbdef7072b24adaa726cc5"
+        verified: "github.com/proxmox-oidc-credential-helper/proxmox-oidc-credential-helper/"
+      sha256 "8a1a732a625361562d3bcb36af1baebebc00729b4429ad64251430ec553a3db1"
+    end
+  end
+
+  postflight do
+    if OS.mac?
+      system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/proxmox-oidc-credential-helper"]
     end
   end
 
